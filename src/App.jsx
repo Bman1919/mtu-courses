@@ -22,11 +22,9 @@ function App() {
     <Routes>
       <Route element={<Hamburger branches={pages}/>}>
         <Route path="/" element={<Home branches={pages}/>} />
-        <Route element={<Layout />}>
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )
