@@ -1,8 +1,8 @@
 import './BranchMenu.css';
 
-export default function BranchMenu({x,y,endX,width=200,height=140,branches, fontSize=16}){ // Branches is in the form: {name: "", fn: () => {}}
+export default function BranchMenu({x,y,endX,yOffset=0,width=200,height=140,branches, fontSize=16}){ // Branches is in the form: {name: "", fn: () => {}}
     const deltay = height / branches.length;
-    const smallY = y - height / 2;
+    const smallY = y - height / 2 + yOffset;
 
     const maxWidth = Math.max(...branches.map(branch => branch.name.length * fontSize));
 

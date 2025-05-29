@@ -3,18 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Importing the CSS file for styling
 import BranchMenu from './BranchMenu/BranchMenu';
 
-export default function Home() {
+export default function Home(branches = [
+  {name: "Home", fn: () => {navigate("/")}},
+  {name: "About", fn: () => {navigate("/about")}},
+  {name: "Courses", fn: () => {navigate("/courses")}},
+]) {
   const navigate = useNavigate();
 
   const [shifted, setShifted] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState({x:0,y:0});
   const titleRef = useRef(null);
-
-  const branches = [
-    {name: "Home", fn: () => {navigate("/")}},
-    {name: "About", fn: () => {navigate("/about")}},
-    {name: "Contact", fn: () => {console.log("Contact")}},
-  ];
 
   useEffect(() => {
     function handleMouseMove(e){
@@ -53,13 +51,13 @@ export default function Home() {
     >
       <div style={{display:'flex', alignItems:'center',position:'relative'}}>
         <h1 ref={titleRef} style={{marginRight:0}}>Welcome to the Home Page</h1>
-        {shifted && (
+        {shifted && branches && branches.length > 0 && menuAnchor.y > 0 && (
           <div style={{position:'absolute', left: '100%', top: '50%', transform: 'translateY(-45%)'}}>
             <BranchMenu 
               x={0} 
-              y={menuAnchor.y * 5} 
+              y={menuAnchor.y * 5 || 70} 
               endX={180}
-              height={menuAnchor.y * 10}
+              height={menuAnchor.y * 10 || 140}
               branches={branches}
             />
           </div>

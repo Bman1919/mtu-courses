@@ -1,0 +1,31 @@
+.search-bar{
+    border-radius: 10px;
+    width: 10vw;
+    height: 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+    transition: width 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+    width: 45vw;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.course-item {
+  width: 50vw;
+  background: #f0f4fa;              /* Sets a light blue-gray background color for the pill */
+  border-radius: 25%;              /* Makes the corners fully rounded, creating a pill shape */
+  padding: 4px 24px;                 /* 4px vertical (top/bottom), 24px horizontal (left/right) padding for compact height and wide pill */
+  margin: 20px 0;                    /* 20px space above and below each pill, no space left/right */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Adds a subtle shadow for depth */
+  display: flex;                     /* Uses flexbox for layout inside the pill */
+  flex-direction: column;            /* Arranges child elements (like title and description) vertically */
+  align-items: center;               /* Centers child elements horizontally within the pill */
+  transition: background 0.2s;       /* Smoothly animates background color changes (e.g., on hover) */
+}
+
+.course-item:hover {
+  background: #e0e7ff;
+}

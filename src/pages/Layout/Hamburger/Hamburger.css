@@ -1,0 +1,25 @@
+:root{
+    --top: 20px;
+    --left: 20px;
+    --width: 30px;
+    --height: 30px;
+}
+
+.hamburger-container{
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+}
+
+.hamburger-menu {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger-menu:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
